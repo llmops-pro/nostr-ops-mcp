@@ -1,0 +1,57 @@
+{
+  "name": "nostr-ops-mcp",
+  "version": "0.2.1",
+  "description": "MCP server exposing NOSTR protocol primitives (sign, publish, query, NIP-19 encode/decode, NIP-05 lookup, encrypted DMs) to LLM agents. Defense-in-depth safety: kind allowlist, DM recipient allowlist, rate limits, audit log. Supports both nsec and NIP-46 remote signers.",
+  "type": "module",
+  "license": "MIT",
+  "author": "LLMOps.Pro <https://njump.me/npub1hdg932jvwc3jdvkqywgqv0ue4nn60exrf92asy8mtazt3hjg7d2s2yw0nw>",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "nostr",
+    "ndk",
+    "nip-19",
+    "nip-44",
+    "nip-46",
+    "nip-05",
+    "claude",
+    "ai-agent",
+    "llm",
+    "bunker"
+  ],
+  "bin": {
+    "nostr-ops-mcp": "dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    ".env.example",
+    "examples"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --target node20 --clean --shims",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@nostr-dev-kit/ndk": "^2.0.0",
+    "nostr-tools": "^2.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
