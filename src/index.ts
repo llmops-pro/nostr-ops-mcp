@@ -56,7 +56,7 @@ async function main(): Promise<void> {
   });
 
   const server = new McpServer(
-    { name: "nostr-ops-mcp", version: "0.2.1" },
+    { name: "nostr-ops-mcp", version: "0.2.2" },
     { capabilities: { tools: {} } },
   );
 
