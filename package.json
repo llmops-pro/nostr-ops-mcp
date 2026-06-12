@@ -1,6 +1,7 @@
 {
   "name": "nostr-ops-mcp",
-  "version": "0.2.2",
+  "version": "0.2.3",
+  "mcpName": "io.github.llmops-pro/nostr-ops-mcp",
   "description": "MCP server exposing NOSTR protocol primitives (sign, publish, query, NIP-19 encode/decode, NIP-05 lookup, encrypted DMs) to LLM agents. Defense-in-depth safety: kind allowlist, DM recipient allowlist, rate limits, audit log. Supports both nsec and NIP-46 remote signers.",
   "type": "module",
   "license": "MIT",

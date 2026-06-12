@@ -1,0 +1,46 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.llmops-pro/nostr-ops-mcp",
+  "description": "Nostr identity, publishing, and DMs for agents: query relays, publish notes/long-form/addressable events, NIP-44/04 DMs, NIP-19 encoding, NIP-05 verification \u2014 with kind/DM allowlists, rate limiting, and an audit log.",
+  "repository": {
+    "url": "https://github.com/llmops-pro/nostr-ops-mcp",
+    "source": "github"
+  },
+  "version": "0.2.3",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "nostr-ops-mcp",
+      "version": "0.2.3",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "NOSTR_RELAYS",
+          "description": "Comma-separated wss:// relay URLs",
+          "isRequired": true,
+          "isSecret": false
+        },
+        {
+          "name": "NOSTR_NIP46_URI",
+          "description": "NIP-46 bunker URI (preferred signer; keeps the nsec off this machine)",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "NOSTR_PRIVATE_KEY",
+          "description": "nsec private key (alternative to NOSTR_NIP46_URI; read-only mode if neither is set)",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "NOSTR_ALLOWED_KINDS",
+          "description": "Comma-separated event kinds the server may publish (required when a signer is configured)",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
